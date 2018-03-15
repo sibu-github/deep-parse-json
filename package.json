@@ -1,7 +1,7 @@
 {
   "name": "deep-parse-json",
   "version": "1.0.1",
-  "description": "Recursively parses stringified json string",
+  "description": "Recursively parses a stringified json and returns javascript object",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -12,5 +12,5 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^5.0.4"
-  }	
+  }
 }
