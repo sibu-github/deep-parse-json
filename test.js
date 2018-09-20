@@ -41,8 +41,8 @@ describe('Test deepParseJson function', () => {
     expect(deepParseJson(stringified)).to.deep.equal(expectedValue);
   });
   it('should be able to parse array of objects', () => {
-    const stringified = '[{"foo": "bar", "bar": 45, "baz": null}, {"foo": "bar", "bar": 45, "baz": null}]';
-    const expectedValue = [{ foo: 'bar', bar: 45, baz: null }, { foo: 'bar', bar: 45, baz: null }];
+    const stringified = '[{"foo": "bar", "bar": "45", "baz": null}, {"foo": "bar", "bar": 45, "baz": null}]';
+    const expectedValue = [{ foo: 'bar', bar: '45', baz: null }, { foo: 'bar', bar: 45, baz: null }];
     expect(deepParseJson(stringified)).to.deep.equal(expectedValue);
   });
   it('should be able to parse nested objects', () => {
