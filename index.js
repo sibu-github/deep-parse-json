@@ -4,11 +4,13 @@
  * @param  {[type]} jsonString [stringified json to parse]
  * @return {[type]}            [normalized Javascript object]
  */
+
+const isNumString = (str) => !isNaN(Number(str));
 function deepParseJson(jsonString) {
   // if not stringified json rather a simple string value then JSON.parse will throw error
   // otherwise continue recursion
   if (typeof jsonString === 'string') {
-    if (!isNaN(Number(jsonString))) {
+    if (isNumString(jsonString)) {
       // if a numeric string is received, return itself
       // otherwise JSON.parse will convert it to a number
       return jsonString;
@@ -25,7 +27,8 @@ function deepParseJson(jsonString) {
     // if an object is received then deepParse each element in the object
     // typeof null returns 'object' too, so we have to eliminate that
     return Object.keys(jsonString).reduce((obj, key) => {
-      obj[key] = deepParseJson(jsonString[key]);
+      const val = jsonString[key];
+      obj[key] = isNumString(val) ? val : deepParseJson(val);
       return obj;
     }, {});
   } else {
