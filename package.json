@@ -1,6 +1,6 @@
 {
   "name": "deep-parse-json",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Recursively parses a stringified json and returns javascript object",
   "main": "index.js",
   "scripts": {
