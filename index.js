@@ -28,9 +28,9 @@ function deepParseJson(jsonString) {
     // typeof null returns 'object' too, so we have to eliminate that
     return Object.keys(jsonString).reduce((obj, key) => {
       const val = jsonString[key];
-      obj[key] = isNumString(val) ? val : deepParseJson(val);
+      obj[key] = deepParseJson(val);
       return obj;
-    }, {});
+    }, Object.create(null));
   } else {
     // otherwise return whatever was received
     return jsonString;
