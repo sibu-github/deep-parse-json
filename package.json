@@ -4,6 +4,10 @@
   "description": "Recursively parses a stringified json and returns javascript object",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test:watch": "jest --watch",
